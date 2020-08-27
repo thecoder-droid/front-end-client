@@ -3,6 +3,8 @@ import {Container, Row, Col} from 'reactstrap';
 import FoodCreate from './FoodCreate';
 import FoodTable from './FoodTable';
 import FoodEdit from './FoodEdit';
+import APIURL from '../helpers/environment';
+
 
 const FoodIndex = (props) => {
     const [foods, setFoods] = useState([]);
@@ -11,7 +13,7 @@ const FoodIndex = (props) => {
     const [foodToUpdate, setFoodToUpdate] = useState({});
 
     const fetchFoods = () => {
-        fetch('http://localhost:3000/api/food/', {
+        fetch(`${APIURL}/api/food/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

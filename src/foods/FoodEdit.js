@@ -9,6 +9,8 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from '../helpers/environment';
+
 
 const FoodEdit = (props) => {
   const [editName, setEditName] = useState(props.foodToUpdate.name);
@@ -18,7 +20,7 @@ const FoodEdit = (props) => {
   const [editRec, setEditRec] = useState(props.foodToUpdate.recipe);
   const foodUpdate = (event, food) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/api/food/${props.foodToUpdate.id}`, {
+    fetch(`${APIURL}/api/food/${props.foodToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         food: {

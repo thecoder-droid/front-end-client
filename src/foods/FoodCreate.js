@@ -9,6 +9,8 @@ import {
   ModalBody,
   ModalHeader,
 } from "reactstrap";
+import APIURL from '../helpers/environment';
+
 
 const FoodCreate = (props) => {
   const [name, setName] = useState("");
@@ -21,7 +23,7 @@ const FoodCreate = (props) => {
     e.preventDefault();
     console.log(props.token);
 
-    fetch("http://localhost:3000/api/food/", {
+    fetch(`${APIURL}/api/food/`, {
       method: "POST",
       body: JSON.stringify({
         food: {

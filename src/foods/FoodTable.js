@@ -9,11 +9,12 @@ import React from "react";
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import {Button, Card, Table} from 'reactstrap'
+import APIURL from '../helpers/environment';
 
 
 const FoodTable = (props) => {
   const deleteFood = (food) => {
-    fetch(`http://localhost:3000/api/food/${food.id}`, {
+    fetch(`${APIURL}/api/food/${food.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
