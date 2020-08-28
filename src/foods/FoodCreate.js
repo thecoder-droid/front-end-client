@@ -8,13 +8,18 @@ import {
   Modal,
   ModalBody,
   ModalHeader,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
 } from "reactstrap";
-import APIURL from '../helpers/environment';
-
+import APIURL from "../helpers/environment";
 
 const FoodCreate = (props) => {
   const [name, setName] = useState("");
-  const [image, setImage] = useState("");
+  const [url, setUrl] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [description, setDescription] = useState("");
   const [recipe, setRecipe] = useState("");
@@ -28,7 +33,7 @@ const FoodCreate = (props) => {
       body: JSON.stringify({
         food: {
           name: name,
-          image: image,
+          url: url,
           ingredients: ingredients,
           description: description,
           recipe: recipe,
@@ -43,7 +48,7 @@ const FoodCreate = (props) => {
       .then((logData) => {
         console.log(logData);
         setName("");
-        setImage("");
+        setUrl("");
         setIngredients("");
         setDescription("");
         setRecipe("");
@@ -54,7 +59,9 @@ const FoodCreate = (props) => {
 
   return (
     <>
-      <Button onClick={props.createOn} color="warning">Make a Food Post</Button>
+      <Button onClick={props.createOn} color="warning">
+        Make a Food Post
+      </Button>
       <Modal isOpen={props.updateActiveCreate}>
         <Button onClick={props.createOff}>Close</Button>
         <ModalHeader className="create-form-head">Make a Food Post</ModalHeader>
@@ -69,11 +76,11 @@ const FoodCreate = (props) => {
               />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor="image">Image of Dish</Label>
+              <Label htmlFor="url">Image of Dish</Label>
               <Input
-              name="image"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
+                name="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
               />
             </FormGroup>
             <FormGroup>

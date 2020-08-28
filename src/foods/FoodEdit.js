@@ -14,7 +14,7 @@ import APIURL from '../helpers/environment';
 
 const FoodEdit = (props) => {
   const [editName, setEditName] = useState(props.foodToUpdate.name);
-  const [editImage, setEditImage] = useState(props.foodToUpdate.image);
+  const [editUrl, setEditUrl] = useState(props.foodToUpdate.url);
   const [editIng, setEditIng] = useState(props.foodToUpdate.ingredients);
   const [editDesc, setEditDesc] = useState(props.foodToUpdate.description);
   const [editRec, setEditRec] = useState(props.foodToUpdate.recipe);
@@ -25,7 +25,7 @@ const FoodEdit = (props) => {
       body: JSON.stringify({
         food: {
           name: editName,
-          image: editImage,
+          url: editUrl,
           ingredients: editIng,
           description: editDesc,
           recipe: editRec,
@@ -57,11 +57,11 @@ const FoodEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="image">Edit Image of Dish</Label>
+            <Label htmlFor="url">Edit Image of Dish</Label>
             <Input 
-            name="image"
-            value={editImage}
-            onChange={(e) => setEditImage(e.target.value)}
+            name="url"
+            value={editUrl}
+            onChange={(e) => setEditUrl(e.target.value)}
             />
           </FormGroup>
           <FormGroup>

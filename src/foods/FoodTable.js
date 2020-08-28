@@ -8,7 +8,7 @@ import React from "react";
 // import CardMedia from '@material-ui/core/CardMedia';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
-import {Button, Card, Table} from 'reactstrap'
+import {Button, Card, CardImg, Table} from 'reactstrap'
 import APIURL from '../helpers/environment';
 
 
@@ -29,12 +29,11 @@ const FoodTable = (props) => {
         <tr key={index}>
           <Card>
           <td >{food.name}</td>
-          <td>{food.image}</td>
+            <CardImg style={{width: "100%", height: 450, textAlign: "center"}} src={food.url} alt="card image cap"/>
           <td>{food.ingredients}</td>
           <td>{food.description}</td>
           <td>{food.recipe}</td>
-          <td>
-          <Button size="small" color="dark">Share</Button> 
+          <td> 
             <Button
               color="warning"
               onClick={() => {
@@ -54,10 +53,13 @@ const FoodTable = (props) => {
             </Button>
           </td>
           </Card>
+          <br/>
         </tr>
       );
     });
   };
+
+  
 
   return (
     <>
@@ -65,7 +67,7 @@ const FoodTable = (props) => {
       <hr />
       <Table>
         <tbody>{foodMapper()}</tbody>
-      </Table>
+        </Table>
     </>
   );
 };
