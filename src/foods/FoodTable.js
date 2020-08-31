@@ -29,7 +29,8 @@ const FoodTable = (props) => {
         <tr key={index}>
           <Card>
           <td >{food.name}</td>
-            <CardImg style={{width: "100%", height: 450, textAlign: "center"}} src={food.url} alt="card image cap"/>
+            <td><CardImg style={{width: "85%", alignItems: "center",  marginBottom:"5px", borderRadius:"5px 5px 5px 5px", border:"solid black 1px"}} src={food.url} alt="card image cap"/>
+            </td>
           <td>{food.ingredients}</td>
           <td>{food.description}</td>
           <td>{food.recipe}</td>

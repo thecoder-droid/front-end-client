@@ -8,12 +8,6 @@ import {
   Modal,
   ModalBody,
   ModalHeader,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
 } from "reactstrap";
 import APIURL from "../helpers/environment";
 
@@ -70,6 +64,7 @@ const FoodCreate = (props) => {
             <FormGroup>
               <Label htmlFor="name">Name of Dish</Label>
               <Input
+              type="textarea"
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -81,19 +76,23 @@ const FoodCreate = (props) => {
                 name="url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
+                type="textarea"
               />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="ingredients">Ingredients List</Label>
               <Input
+              type="textarea"
                 name="ingredients"
                 value={ingredients}
                 onChange={(e) => setIngredients(e.target.value)}
+                rows="6"
               />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="description">Short Description of Dish</Label>
               <Input
+              type="textarea"
                 name="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -102,6 +101,7 @@ const FoodCreate = (props) => {
             <FormGroup>
               <Label htmlFor="recipe">Link to Recipe</Label>
               <Input
+              type="textarea"
                 name="recipe"
                 value={recipe}
                 onChange={(e) => setRecipe(e.target.value)}

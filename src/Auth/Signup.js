@@ -8,8 +8,8 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
 
     let handleSubmit = (event) => {
-        setTimeout(<Loading/>)
         event.preventDefault();
+        props.setShowLoading(true)
         fetch(`${APIURL}/api/user`, {
             method: 'POST',
             body: JSON.stringify({user:{email: email, passwordhash: password}}),
@@ -38,7 +38,7 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} minLength="5"/>
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" value={password} minLength="5"/>
                 </FormGroup>
                 <Button type="submit" color="warning">Signup</Button>
             </Form>
