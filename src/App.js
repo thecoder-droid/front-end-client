@@ -30,12 +30,12 @@ function App() {
 
   const protectedViews = () => {
     return localStorage.getItem("token") === sessionToken ? (
+      !showLoading ? <Auth updateToken={updateToken} showLoading={showLoading} setShowLoading={setShowLoading}/> : <Loading/>
+
+    ) : ( 
       <Router>
       <Home token={sessionToken} />
       </Router>
-    ) : ( 
-      !showLoading ? <Auth updateToken={updateToken} showLoading={showLoading} setShowLoading={setShowLoading}/> : <Loading/>
-      
       );
   };
 
