@@ -22,6 +22,7 @@ const Body = (props) => {
         <br/>
         <FoodIndex token={props.token} />
       </header>
+        <footer style={{backgroundColor: "rgb(255, 204, 0)"}}>© 2020 Website Created By Gabriel Francis</footer>
       <Switch>
             <Route exact path="/home">Home</Route>
         </Switch>
